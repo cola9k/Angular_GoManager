@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sample"> <!--angular의 ng-app을 사용하고 현재 태그 하위에 {{1+1}}이 계산이 되어 진다-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        form input#name {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body class="container" ng-controller="mainCtrl">
+<div ng-repeat="person in people"> <!--scope의 people에 접근해서 array이면 person만큼 할당한다.-->
+    <h1>인적사항</h1>
+    <p>{{person.name}}</p>
+    <h2>나이</h2>
+    <p>{{person.age}}</p>
+</div>
+<div>Total age : {{people[0].age + people[1].age}}</div>
+</body>
+</html>

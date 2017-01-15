@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sample"> <!--angular의 ng-app을 사용하고 현재 태그 하위에 {{1+1}}이 계산이 되어 진다-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+
+    </style>
+</head>
+<body class="container" ng-controller="mainCtrl">
+<form name="userForm">
+    이름 : <input type="text" name="username" ng-model="name" ng-minlength="3" ng-required="true">
+    <br>
+    핸드폰 번호 : <input type="text" name="telephone" ng-model="tel" ng-pattern="/^\d{3}-\d{3,4}-\d{4}/">
+    <!--ng-pattern는 정규 표현식을 사용가능하다.^는 앞에서부터, [?]괄호 숫자만큼 써야지 옳음-->
+    <br>
+    이메일 : <input type="email" name="email" ng-model="email" ng-required="true">
+</form>
+<br>
+<button class="btn btn-default" ng-click="signUp(userForm)">가입하기</button>
+<div class="well" ng-show="text">
+    {{text}}
+</div>
+{{1+1|currency}}
+{{"ddd"|uppercase}}
+</body>
+</html>

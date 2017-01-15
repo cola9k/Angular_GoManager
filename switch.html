@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sample"> <!--angular의 ng-app을 사용하고 현재 태그 하위에 {{1+1}}이 계산이 되어 진다-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        .red {
+            background: red;
+        }
+        .blue {
+            background: blue;
+        }
+        .green {
+            background: green;
+        }
+        .black {
+            background: black;
+        }
+    </style>
+</head>
+<body class="container" ng-controller="mainCtrl">
+<input type="radio" ng-model="color" value="red">빨강 <br>
+<input type="radio" ng-model="color" value="blue">파랑 <br>
+<input type="radio" ng-model="color" value="green">초록 <br>
+
+<div ng-switch="color">
+    <div ng-switch-when="red" class="box red"></div>
+    <div ng-switch-when="blue" class="box blue"></div>
+    <div ng-switch-when="green" class="box green"></div>
+    <div ng-switch-default class="box black"></div>
+</div>
+</body>
+</html>

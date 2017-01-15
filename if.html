@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sample"> <!--angular의 ng-app을 사용하고 현재 태그 하위에 {{1+1}}이 계산이 되어 진다-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        form input#name {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body class="container" ng-controller="mainCtrl">
+    ok: <input class="form-control" ng-model="checked" type="checkbox">
+    <br>
+    if is ok we can move to
+    <button class="btn btn-default" ng-if="checked">NEXT</button><!--ng-if는 태그의 참거짓에 따라 태그가 사라지고 생기고 한다.-->
+</body>
+</html>

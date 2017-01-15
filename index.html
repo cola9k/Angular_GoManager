@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sample"> <!--angular의 ng-app을 사용하고 현재 태그 하위에 {{1+1}}이 계산이 되어 진다-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+    <script src="user/controller.js"></script>
+    <script src="user/service.js"></script>
+
+    <script src="app.js"></script>
+    <style>
+        form input#name {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="navbar navbar-default">
+    	<a class="navbar-brand" href="#">DSU</a>
+    	<ul class="nav navbar-nav">
+    		<li class="active">
+    			<a href="#!/home">Home</a>
+    		</li>
+    		<li>
+    			<a href="#!/user">User</a>
+    		</li>
+    	</ul>
+    </div>
+    </nav>
+    <ng-view></ng-view>
+<!--<div>Total age : {{people[0].age + people[1].age}}</div>-->
+</body>
+</html>

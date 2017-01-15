@@ -1,2 +1,12 @@
-# Angular_GoManager
-고재도 매니저 Web 특강(angular+nodejs)
+Dongseo Univ. AngularJS Practice.
+----
+
+## How to install
+```text
+bower install
+```
+
+## About
+
+- AngularJS Basic
+--Template

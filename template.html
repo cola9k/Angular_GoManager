@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/mustache.js/mustache.min.js"></script>
+    <script>
+        $(function () {
+            var person = {
+                name : "jay",
+                age : 22
+            };
+            var me = {
+                name : "김태현",
+                age : 25
+            };
+            var people = [person,me];
+            var tmpl = $("#personTpl").html(); // id의 personTpl을 들고온다
+            var renderedHtml = Mustache.render(tmpl, people); // Mustache를 이용하면 body에 있는 틀안에 있는 값들을 변경 시킬수 있다.
+            $("body").html(renderedHtml);
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+<script type="text/template" id="personTpl">
+    {{#.}} <!--foreach문과 같다고 보면 된다.-->
+    <div>
+        <h1>인적사항</h1>
+        <p>{{name}}</p>
+        <h2>나이</h2>
+        <p>{{age}}</p>
+    </div>
+    {{/.}}
+</script>
+
+</body>
+</html>
